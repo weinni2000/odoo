@@ -2434,11 +2434,12 @@ class IrQweb(models.AbstractModel):
     def _compile_directive_esc(self, el, compile_context, level):
         # deprecated use.
         if compile_context.get('dev_mode'):
-            _logger.warning(
-                "Found deprecated directive @t-esc=%r in template %r. Replace by @t-out",
-                el.get('t-esc'),
-                compile_context.get('ref', '<unknown>'),
-            )
+            pass
+            #_logger.warning(
+            #    "Found deprecated directive @t-esc=%r in template %r. Replace by @t-out",
+            #    el.get('t-esc'),
+            #    compile_context.get('ref', '<unknown>'),
+            #)
         return self._compile_directive_out(el, compile_context, level)
 
     def _compile_directive_raw(self, el, compile_context, level):
