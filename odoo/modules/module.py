@@ -453,7 +453,7 @@ def _load_manifest(module: str, manifest_content: dict) -> dict:
         if manifest['installable']:
             raise ValueError(f"Module {module}: invalid manifest") from e
     if manifest['installable'] and not check_version(str(manifest['version']), should_raise=False):
-        _logger.warning("The module %s has an incompatible version, setting installable=False", module)
+        #_logger.warning("The module %s has an incompatible version, setting installable=False", module)
         manifest['installable'] = False
 
     return manifest
